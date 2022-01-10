@@ -87,7 +87,7 @@ describe('Furucombo', function () {
       victimBalanc = await link.balanceOf(victimAddr)
       const allowance = await link.allowance(victimAddr, furucombo.address)
       console.log(
-        `Victim LINK balance: ${ethers.utils.formatUnits(victimBalanc, 6)}`,
+        `Victim LINK balance: ${ethers.utils.formatUnits(victimBalanc, 18)}`,
       )
     })
 
