@@ -6,8 +6,6 @@ This repo studies the Furucombo approval hack and rebuilds two victims within bl
 
 ## Attack
 
-### Method
-
 Since the AaveV2 proxy had been whitelisted in Furucombo’s logic, the attacker can used the double-delegation chain to call into their attacker contract under the Furucombo contract’s context.
 
 The attacker took advantage of combining a state of whitelisted AaveV2 proxy and non-initialized Furucombo contract storage to draw victim accounts with the following function calls.
