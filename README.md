@@ -1,6 +1,6 @@
 # Furucombo retrospect
 
-This repo studies the Furucombo approval hack and rebuilt two victims within block number 11940499.
+This repo studies the Furucombo approval hack and rebuilds two victims within block number 11940499.
 
 <br>
 
