@@ -8,21 +8,21 @@ This repo studies the Furucombo approval hack event and retrospects two victims 
 
 ### Method
 
-Since the AaveV2 proxy had been whitelisted in Furucombo’s logic, the attacker can now use the double-delegation chain to call into their attacker contract under the Furucombo contract’s context.
+Since the AaveV2 proxy had been whitelisted in Furucombo’s logic, the attacker can used the double-delegation chain to call into their attacker contract under the Furucombo contract’s context.
 
-The attacker took advantage of combining a whitelisted AaveV2 proxy and non-initialized Furucombo contract storage with the following function calls.
+The attacker took advantage of combining a state of whitelisted AaveV2 proxy and non-initialized Furucombo contract storage with the following function calls.
 
 - `batchEcex`
 - `_execs`
 - `_exec`
 
-Through `_exec` once a contract is valid, it will then be executed (potentially a delegatecall). The vulnerability is that the AaveV2 proxy was registered valid.
+Once a contract is valid in `_exec`, a delegate call will then be executed. That exposes a vulnerability where the AaveV2 proxy was registered valid.
 
-Therefore, the attacker can spoof AaveV2 Proxy by setting up `initialize(this, "")` to set the implementation to the attacker Furucombo.
+The attacker then spoofed AaveV2 Proxy by setting up `initialize(this, "")` to set the implementation to the attacker storage.
 
 A double-delegation chain was then employed to the attacker address and transfer funds using `transferFrom()` from victims that approved the Furucombo contract beforehand.
 
-From a list of victims, the hacker had targeted victims and performed attacks in descending order by account values.
+From a list of victims, the hacker had targeted victims and performed attacks in descending order by account amounts.
 
 <br>
 
@@ -31,7 +31,7 @@ From a list of victims, the hacker had targeted victims and performed attacks in
 1. `npm i`
 2. `npx hardhat test`
 
-Two ERC20 tokens are tested (hacked), USDC and LINK respectively.
+Two ERC20 tokens USDC and LINK are tested (hacked).
 
 <br>
 
