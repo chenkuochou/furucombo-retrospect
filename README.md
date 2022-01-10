@@ -1,6 +1,6 @@
 # Furucombo retrospect
 
-This repo studies the Furucombo approval hack event and retrospects two victims within block number 11940499.
+This repo studies the Furucombo approval hack and rebuilt two victims within block number 11940499.
 
 <br>
 
@@ -26,7 +26,7 @@ From a list of victims, the hacker had targeted victims and performed attacks in
 
 <br>
 
-## Rebuild the attack
+## Rebuild attacks
 
 1. `npm i`
 2. `npx hardhat test`
