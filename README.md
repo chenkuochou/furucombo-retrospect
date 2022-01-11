@@ -16,7 +16,7 @@ The attacker took the advantage of combining a state of whitelisted AaveV2 proxy
 
 Once a contract was valid at `_exec`, a delegate call will then be executed. That exposes a vulnerability where the AaveV2 proxy was registered valid.
 
-The attacker then spoofed AaveV2 Proxy by setting up `initialize(this, "")` to set the implementation to the attacker storage.
+The attacker spoofed AaveV2 proxy by setting up `initialize(this, "")` to set the implementation to the attacker storage.
 
 A double-delegation chain was then employed to the attacker address and transfer funds using `transferFrom()` from victims that approved the Furucombo contract beforehand.
 
