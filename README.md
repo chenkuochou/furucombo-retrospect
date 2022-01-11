@@ -14,7 +14,7 @@ The attacker took the advantage of combining a state of whitelisted AaveV2 proxy
 - `_execs`
 - `_exec`
 
-Once a contract was valid at `_exec`, a delegate call will then be executed. That exposes a vulnerability where the AaveV2 proxy was registered valid.
+Once a contract was valid at `_exec`, a delegate call will then be executed. That made the furucombo proxy vulnerabe since the AaveV2 proxy was registered valid.
 
 The attacker spoofed AaveV2 proxy by setting up `initialize(this, "")` to set the implementation to the attacker storage.
 
@@ -37,7 +37,7 @@ Two ERC20 tokens USDC and LINK are tested (hacked).
 
 This attack would not have happened if the following measurements are considered.
 
-- Set up `implementation` for the AaveV2 Proxy contract
+- Set up `implementation` for the AaveV2 proxy contract
 - Only whitelist activated proxy contracts
 - Add extra security layers before `_to` address forwards
 - Regardless of initializer functions, `delegatecall` can be adjusted and relevant to the current context.
