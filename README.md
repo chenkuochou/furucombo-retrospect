@@ -6,7 +6,7 @@ This repo studies the Furucombo approval hack and rebuilds two victims within bl
 
 ## Attack
 
-Since the AaveV2 proxy had been whitelisted in Furucombo’s logic, the attacker can use the double-delegation chain to call into their attacker contract under the Furucombo contract’s context.
+Since the AaveV2 proxy had been whitelisted in Furucombo’s logic, the attacker can use   the double-delegation chain to call into their attacker contract under the Furucombo contract’s context.
 
 The attacker took advantage of combining a state of whitelisted AaveV2 proxy and non-initialized Furucombo contract storage to draw victim accounts with the following function calls.
 
@@ -46,13 +46,13 @@ Whether the whitelisted contract had been audited is unknown, the vulnerabilitie
 
 <br/>
 
-## to-do
+## To-do
 
-Wallets that have been interacted between block 11618386 and 11940503. It's non-trivial to investigate extra potential loss for the wallets tokens that have been approved before the attack.
+Wallets that have been interacted between block 11618386 and 11940503 might require further investigation. It's non-trivial to check potential loss for the wallets addresses that have been approved before the attack.
 
 <br/>
 
-## reference
+## Reference
 
 https://slowmist.medium.com/slowmist-analysis-of-the-furucombo-hack-28c9ae558db9  
 https://github.com/MrToph/replaying-ethereum-hacks  
