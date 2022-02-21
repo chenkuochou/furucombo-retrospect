@@ -10,7 +10,7 @@ Since the AaveV2 proxy had been whitelisted in Furucombo’s logic, the attacker
 
 The attacker took the advantage of combining a state of whitelisted AaveV2 proxy and non-initialized Furucombo contract storage to draw victim accounts with the following function calls.
 
-- `batchEcex`
+- `batchExec`
 - `_execs`
 - `_exec`
 
